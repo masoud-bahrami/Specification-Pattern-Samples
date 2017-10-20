@@ -30,8 +30,9 @@ I also use a very simple example to show hard coded and parameterized specificat
 
 For example we have two svery simple **_MathSpecification_**
 
-1-**_GreaterThanMathSpecification_**
-2-**_LowerThanMathSpecification_**
+1. **_GreaterThanMathSpecification_**
+2. **_LowerThanMathSpecification_**
+
 Without for _Between_ operator, we have to implemented a new **_specification_**, for example :
 
 ``` 
