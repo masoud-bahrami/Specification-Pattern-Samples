@@ -22,7 +22,7 @@ There are various implementations of the number
 
 Here I tried to implemented all of them with a simple example of mathematical operators based on **C#** .
 
-This pattern was intoduced first by **_Eric Evans_** and **_Martin Fowler_** When they worked at **_Silicon Valley_**.
+This pattern was intoduced first by **_[Eric Evans](https://www.linkedin.com/in/ericevansddd/)_** and **_[Martin Fowler](https://martinfowler.com/)_** When they worked at **_Silicon Valley_**.
 
 In their original article, they use several examples, including cargos and containers.Some peace of their's example has been implemented here.
 
