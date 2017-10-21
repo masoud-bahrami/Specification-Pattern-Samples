@@ -14,7 +14,7 @@ yet highly customizable business logic. Furthermore, upon instantiation the busi
 through method invocation or inversion of control, have its state altered in order to become a delegate of other classes such as a 
 persistence repository.
 
-There are various implementations of the number
+There are various implementations of the _specification pattern_
 
 1. **Hard Coded Specification**
 2. **Parameterized Specification**
