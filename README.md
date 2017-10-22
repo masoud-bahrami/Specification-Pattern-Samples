@@ -52,7 +52,7 @@ public class BetweenMathSpecification : MathSpecification
     }
 ```
 
-But using **_CompositeSpecification_** we can combine this simple operator and create **_Between_** without we have to implement a new specification
+But by using **_CompositeSpecification_** we can combine this simple operator and create **_Between_** without we have to implement a new specification
 ```
 var specification = new
                 MathOperations.ParameterizedSpec.GreaterThanMathSpecification(-5)
