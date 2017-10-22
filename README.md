@@ -1,7 +1,7 @@
 # Specification-Pattern-Samples
 Specification Pattern(Hard coded, Parameterized and Composite) samples, included Eric Evans and Martin Fowler samples 
 
-[Wikipedia](https://en.wikipedia.org/wiki/Specification_pattern) described **__Specification__** as :
+[Wikipedia](https://en.wikipedia.org/wiki/Specification_pattern) defines  **__Specification__**  as follows :
 
 In computer programming, the specification pattern is a particular software design pattern, whereby business rules can be recombined 
 by chaining the business rules together using boolean logic. The pattern is frequently used in the context of domain-driven design.
