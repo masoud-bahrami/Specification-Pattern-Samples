@@ -3,7 +3,7 @@ Specification Pattern(Hard coded, Parameterized and Composite) samples, included
 
 [Wikipedia](https://en.wikipedia.org/wiki/Specification_pattern) defines  **__Specification__**  as follows :
 
-In computer programming, the specification pattern is a particular software design pattern, whereby business rules can be recombined 
+"In computer programming, the specification pattern is a particular software design pattern, whereby business rules can be recombined 
 by chaining the business rules together using boolean logic. The pattern is frequently used in the context of domain-driven design.
 
 A specification pattern outlines a business rule that is combinable with other business rules.
@@ -12,7 +12,7 @@ The Composite Specification class has one function called IsSatisfiedBy that ret
 After instantiation, the specification is "chained" with other specifications, making new specifications easily maintainable, 
 yet highly customizable business logic. Furthermore, upon instantiation the business logic may, 
 through method invocation or inversion of control, have its state altered in order to become a delegate of other classes such as a 
-persistence repository.
+persistence repository."
 
 There are various implementations of the _specification pattern_
 
@@ -22,9 +22,9 @@ There are various implementations of the _specification pattern_
 
 Here I tried to implemented all of them with a simple example of mathematical operators based on **C#** .
 
-This pattern was intoduced first by **_[Eric Evans](https://www.linkedin.com/in/ericevansddd/)_** and **_[Martin Fowler](https://martinfowler.com/)_** When they worked at **_Silicon Valley_**.
+This pattern was introduced first by **_[Eric Evans](https://www.linkedin.com/in/ericevansddd/)_** and **_[Martin Fowler](https://martinfowler.com/)_** When they worked at **_Silicon Valley_**.
 
-In their original article, they use several examples, including cargos and containers.Some peace of their's example has been implemented here.
+In their original article, they use several examples, including cargoes and containers.Some peace of their's example has been implemented here.
 
 I also use a very simple example to show hard coded and parameterized specification, and also how we can combine each specifications using the logical opertors and composite pattern.
 
