@@ -1,0 +1,75 @@
+<h2>Introduction</h2>
+
+<p>When you have a complicated domain and also you need to filter the domain entities, which&nbsp;this action may be repeated several times, and every time you should code this policies for filter the domain entities. In the other words you violate the <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY</a>. One of the other donwstream is that you end-up with unclear domain entities. Specification tries to solve this problem by seperating the candidate set(each entities with you want to fileter them) and the filters statement and the reuse and composite this statement.</p>
+
+<h2>Background</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Specification_pattern">Wikipedia</a>&nbsp;defines&nbsp;<strong><strong>Specification</strong></strong>&nbsp;as follows :</p>
+
+<p>&quot;In computer programming, the specification pattern is a particular software design pattern, whereby business rules can be recombined by chaining the business rules together using boolean logic. The pattern is frequently used in the context of domain-driven design.</p>
+
+<p>A specification pattern outlines a business rule that is combinable with other business rules. In this pattern, a unit of business logic inherits its functionality from the abstract aggregate Composite Specification class. The Composite Specification class has one function called IsSatisfiedBy that returns a boolean value. After instantiation, the specification is &quot;chained&quot; with other specifications, making new specifications easily maintainable, yet highly customizable business logic. Furthermore, upon instantiation the business logic may, through method invocation or inversion of control, have its state altered in order to become a delegate of other classes such as a persistence repository.&quot;</p>
+
+<p>There are various implementations of the&nbsp;<em>specification pattern</em></p>
+
+<ol>
+	<li><strong>Hard Coded Specification</strong></li>
+	<li><strong>Parameterized Specification</strong></li>
+	<li><strong>Composite Specification</strong></li>
+</ol>
+
+<h2>Using the code</h2>
+
+<ol>
+</ol>
+
+<p>Here I tried to implemented all of them with a simple example of mathematical operators based on&nbsp;<strong>C#</strong>&nbsp;.</p>
+
+<p>This pattern was introduced first by&nbsp;<strong><em><a href="https://www.linkedin.com/in/ericevansddd/">Eric Evans</a></em></strong>&nbsp;and&nbsp;<strong><em><a href="https://martinfowler.com/">Martin Fowler</a></em></strong>&nbsp;When they worked at&nbsp;<strong><em>Silicon Valley</em></strong>.</p>
+
+<p>In their original article, they use several examples, including cargoes and containers.Some peace of their&#39;s example has been implemented here.</p>
+
+<p>I also use a very simple example to show hard coded and parameterized specification, and also how we can combine each specifications using the logical opertors and composite pattern.</p>
+
+<p>For example we have two svery simple&nbsp;<strong><em>MathSpecification</em></strong></p>
+
+<ol>
+	<li><strong><em>GreaterThanMathSpecification</em></strong></li>
+	<li><strong><em>LowerThanMathSpecification</em></strong></li>
+</ol>
+
+<p>Without for&nbsp;<em>Between</em>&nbsp;operator, we have to implemented a new&nbsp;<strong><em>specification</em></strong>, for example :</p>
+
+<p>&nbsp;</p>
+
+<pre>
+    public class BetweenMathSpecification : MathSpecification
+     {
+        private readonly int _left, _right;
+        public BetweenMathSpecification(int left, int rigth)
+        {
+            _left = left;
+            _right = rigth;
+        }
+
+        public override bool IsSatisfiedBy(int candidate)
+        {
+            return candidate &gt; _left &amp;&amp; candidate &lt; _right;
+        }
+     }
+</pre>
+
+<p>But by using&nbsp;<strong><em>CompositeSpecification</em></strong>&nbsp;we can combine this simple operator and create&nbsp;<strong><em>Between</em></strong>&nbsp;without we have to implement a new specification</p>
+
+<pre>
+    var specification = new
+                MathOperations.ParameterizedSpec.GreaterThanMathSpecification(-5)
+                .And(new MathOperations.ParameterizedSpec.LowerThanMathSpecification(5));</pre>
+
+<p>&nbsp;</p>
+
+<h2>Points of Interest</h2>
+
+<p>Examples of this section are written in C #. I did not use any C# feature. Because I wanted to make the examples as simple and general as possible. In C# the <strong><em>lambda expressionis </em></strong>the best way to implement Specification Pattern. So in the next I will try to refactor this example and implement them using&nbsp;<strong><em>lambda expressionis </em></strong></p>
+
+<h2>History</h2>
